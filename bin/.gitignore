@@ -1,0 +1,14 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+.idea/
+target/
+*.iml
+
+module_launcherv3.xml
+launcherv3.xml
+launcherv3.properties

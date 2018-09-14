@@ -6,10 +6,10 @@
   <name>Technic Launcher</name>
   <version>4.0-${buildNumber}</version>
   <description>Minecraft launcher for installing and updating Modpacks from the Technic Platform.</description>
-  <url>http://www.technicpack.net</url>
+  <url>https://www.technicpack.net</url>
   <ciManagement>
     <system>jenkins</system>
-    <url>http://build.technicpack.net/job/LauncherV3/</url>
+    <url>http://jenkins.technicpack.net/job/LauncherV3/</url>
   </ciManagement>
   <inceptionYear>2014</inceptionYear>
   <scm>
@@ -19,7 +19,7 @@
   </scm>
   <organization>
     <name>Syndicate, LLC</name>
-    <url>http://www.technicpack.net</url>
+    <url>https://www.technicpack.net</url>
   </organization>
   <build>
     <defaultGoal>clean install</defaultGoal>
@@ -79,7 +79,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>2.0</version>
+        <version>2.1</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -89,6 +89,12 @@
             <configuration>
               <minimizeJar>true</minimizeJar>
               <filters>
+                <filter>
+                  <artifact>org.ccil.cowan.tagsoup:*</artifact>
+                  <includes>
+                    <include>**</include>
+                  </includes>
+                </filter>
                 <filter>
                   <artifact>net.technicpack:*</artifact>
                   <includes>
@@ -115,9 +121,32 @@
                     <exclude>META-INF/ASL2.0</exclude>
                     <exclude>META-INF/LICENSE</exclude>
                     <exclude>META-INF/NOTICE</exclude>
+                    <exclude>org/slf4j/**</exclude>
+                    <exclude>org/eclipse/**</exclude>
+                    <exclude>org/codehaus/**</exclude>
+                    <exclude>org/apache/maven/**</exclude>
+                    <exclude>org/apache/http/**</exclude>
                   </excludes>
                 </filter>
               </filters>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.2.1</version>
+        <executions>
+          <execution>
+            <id>osx.app</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>${basedir}/src/main/assembly/app.xml</descriptor>
+              </descriptors>
             </configuration>
           </execution>
         </executions>
@@ -136,6 +165,85 @@
       <properties>
         <buildNumber>${env.BUILD_NUMBER}</buildNumber>
       </properties>
+    </profile>
+    <profile>
+      <id>package-win</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.akathist.maven.plugins.launch4j</groupId>
+            <artifactId>launch4j-maven-plugin</artifactId>
+            <version>1.7.4</version>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>launch4j</goal>
+                </goals>
+                <configuration>
+                  <headerType>gui</headerType>
+                  <stayAlive>false</stayAlive>
+                  <jar>D:\git\LauncherV3\target/launcher-4.0-0.jar</jar>
+                  <outfile>D:\git\LauncherV3\target/launcher-4.0-0.exe</outfile>
+                  <classPath>
+                    <mainClass>net.technicpack.launcher.LauncherMain</mainClass>
+                    <addDependencies>false</addDependencies>
+                    <preCp>anything</preCp>
+                  </classPath>
+                  <jre>
+                    <minVersion>1.5.0</minVersion>
+                    <opts>
+                      <opt>-Djava.net.preferIPv4Stack=true</opt>
+                      <opt>-Dawt.useSystemAAFontSettings=lcd</opt>
+                      <opt>-Dswing.aatext=true</opt>
+                    </opts>
+                  </jre>
+                  <icon>D:\git\LauncherV3/src/main/resources/exe/icon.ico</icon>
+                  <versionInfo>
+                    <fileVersion>4.0.0.0</fileVersion>
+                    <txtFileVersion>4.0.0.0</txtFileVersion>
+                    <productVersion>4.0.0.0</productVersion>
+                    <txtProductVersion>4.0.0.0</txtProductVersion>
+                    <fileDescription>Technic Launcher</fileDescription>
+                    <productName>Technic Launcher</productName>
+                    <copyright>Syndicate, LLC,
+											https://www.technicpack.net</copyright>
+                    <internalName>launcher</internalName>
+                    <originalFilename>launcher.exe</originalFilename>
+                  </versionInfo>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>package-osx</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>chmod-modeler</id>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>/bin/chmod</executable>
+                  <arguments>
+                    <argument>755</argument>
+                    <argument>${basedir}/src/main/app/Contents/MacOS/JavaAppLauncher</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
   </profiles>
   <properties>

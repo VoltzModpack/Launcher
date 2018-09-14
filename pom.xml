@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -40,30 +41,18 @@
 	<!-- Project dependencies -->
 	<dependencies>
 		<!-- Included in final JAR -->
-        <dependency>
-            <groupId>net.technicpack</groupId>
-            <artifactId>launchercore</artifactId>
-            <version>2.0.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.technicpack</groupId>
-            <artifactId>launcheruicore</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.4</version>
-            <scope>compile</scope>
-        </dependency>
-      <dependency>
-            <groupId>net.technicpack</groupId>
-            <artifactId>minecraftcore</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>12.0.1</version>
+			<scope>compile</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.beust</groupId>
 			<artifactId>jcommander</artifactId>
@@ -88,66 +77,66 @@
 			<version>1.1</version>
 			<scope>compile</scope>
 		</dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
 			<version>2.3.1</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.8</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.4</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.1</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.ccil.cowan.tagsoup</groupId>
-            <artifactId>tagsoup</artifactId>
-            <version>1.2.1</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.xhtmlrenderer</groupId>
-            <artifactId>flying-saucer-core</artifactId>
-            <version>9.0.6</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.aether</groupId>
-            <artifactId>aether-connector-basic</artifactId>
-            <version>1.0.0.v20140518</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.aether</groupId>
-            <artifactId>aether-transport-file</artifactId>
-            <version>1.0.0.v20140518</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.aether</groupId>
-            <artifactId>aether-transport-http</artifactId>
-            <version>1.0.0.v20140518</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-aether-provider</artifactId>
-            <version>3.2.5</version>
-            <scope>compile</scope>
-        </dependency>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.8</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.ccil.cowan.tagsoup</groupId>
+			<artifactId>tagsoup</artifactId>
+			<version>1.2.1</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.xhtmlrenderer</groupId>
+			<artifactId>flying-saucer-core</artifactId>
+			<version>9.0.6</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.aether</groupId>
+			<artifactId>aether-connector-basic</artifactId>
+			<version>1.0.0.v20140518</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.aether</groupId>
+			<artifactId>aether-transport-file</artifactId>
+			<version>1.0.0.v20140518</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.aether</groupId>
+			<artifactId>aether-transport-http</artifactId>
+			<version>1.0.0.v20140518</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-aether-provider</artifactId>
+			<version>3.2.5</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<!-- Build configuration -->
@@ -229,12 +218,12 @@
 						<configuration>
 							<minimizeJar>true</minimizeJar>
 							<filters>
-                                <filter>
-                                    <artifact>org.ccil.cowan.tagsoup:*</artifact>
-                                    <includes>
-                                        <include>**</include>
-                                    </includes>
-                                </filter>
+								<filter>
+									<artifact>org.ccil.cowan.tagsoup:*</artifact>
+									<includes>
+										<include>**</include>
+									</includes>
+								</filter>
 								<filter>
 									<artifact>net.technicpack:*</artifact>
 									<includes>
@@ -277,78 +266,78 @@
 					</execution>
 				</executions>
 			</plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jarsigner-plugin</artifactId>
-        <version>1.3.2</version>
-        <executions>
-          <execution>
-            <id>sign</id>
-	    <configuration>
-	    	<storetype>pkcs12</storetype>
-		<keystore>${env.CERT_KEYSTORE}</keystore>
-		<alias>${env.CERT_ALIAS}</alias>
-		<storepass>${env.CERT_STOREPASS}</storepass>
-		<keypass>${env.CERT_KEYPASS}</keypass>
-	      <verbose>true</verbose>
-	    </configuration>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>verify</id>
-            <goals>
-              <goal>verify</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.2.1</version>
-        <executions>
-          <execution>
-            <id>osx.app</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <descriptors>
-                <descriptor>${basedir}/src/main/assembly/app.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>	
-</plugins>
-</build>
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-jarsigner-plugin</artifactId> -->
+			<!-- <version>1.3.2</version> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <id>sign</id> -->
+			<!-- <configuration> -->
+			<!-- <storetype>pkcs12</storetype> -->
+			<!-- <keystore>${env.CERT_KEYSTORE}</keystore> -->
+			<!-- <alias>${env.CERT_ALIAS}</alias> -->
+			<!-- <storepass>${env.CERT_STOREPASS}</storepass> -->
+			<!-- <keypass>${env.CERT_KEYPASS}</keypass> -->
+			<!-- <verbose>true</verbose> -->
+			<!-- </configuration> -->
+			<!-- <goals> -->
+			<!-- <goal>sign</goal> -->
+			<!-- </goals> -->
+			<!-- </execution> -->
+			<!-- <execution> -->
+			<!-- <id>verify</id> -->
+			<!-- <goals> -->
+			<!-- <goal>verify</goal> -->
+			<!-- </goals> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- </plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>osx.app</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>${basedir}/src/main/assembly/app.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 	<!-- Build profiles -->
 	<profiles>
-		    <profile>
-	        <id>static_build_number</id>
-	        <activation>
-	            <property>
-	                <name>!env.BUILD_NUMBER</name>
-	            </property>
-	        </activation>
-	        <properties>
-	            <buildNumber>0</buildNumber>
-	        </properties>
-	    </profile>
-	    <profile>
-	        <id>dynamic_build_number</id>
-	        <activation>
-	            <property>
-	                <name>env.BUILD_NUMBER</name>
-	            </property>
-	        </activation>
-	        <properties>
-	            <buildNumber>${env.BUILD_NUMBER}</buildNumber>
-	        </properties>
-	    </profile>
+		<profile>
+			<id>static_build_number</id>
+			<activation>
+				<property>
+					<name>!env.BUILD_NUMBER</name>
+				</property>
+			</activation>
+			<properties>
+				<buildNumber>0</buildNumber>
+			</properties>
+		</profile>
+		<profile>
+			<id>dynamic_build_number</id>
+			<activation>
+				<property>
+					<name>env.BUILD_NUMBER</name>
+				</property>
+			</activation>
+			<properties>
+				<buildNumber>${env.BUILD_NUMBER}</buildNumber>
+			</properties>
+		</profile>
 		<!-- Package for Windows -->
 		<profile>
 			<id>package-win</id>
@@ -377,7 +366,11 @@
 									</classPath>
 									<jre>
 										<minVersion>1.5.0</minVersion>
-										<opts><opt>-Djava.net.preferIPv4Stack=true</opt><opt>-Dawt.useSystemAAFontSettings=lcd</opt><opt>-Dswing.aatext=true</opt></opts>
+										<opts>
+											<opt>-Djava.net.preferIPv4Stack=true</opt>
+											<opt>-Dawt.useSystemAAFontSettings=lcd</opt>
+											<opt>-Dswing.aatext=true</opt>
+										</opts>
 									</jre>
 									<icon>${basedir}/src/main/resources/exe/icon.ico</icon>
 									<versionInfo>
@@ -387,7 +380,8 @@
 										<txtProductVersion>4.0.0.${buildNumber}</txtProductVersion>
 										<fileDescription>${project.name}</fileDescription>
 										<productName>${project.name}</productName>
-										<copyright>${project.organization.name}, ${project.organization.url}</copyright>
+										<copyright>${project.organization.name},
+											${project.organization.url}</copyright>
 										<internalName>${project.artifactId}</internalName>
 										<originalFilename>${project.artifactId}.exe</originalFilename>
 									</versionInfo>
@@ -416,9 +410,9 @@
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
 						<executions>
-							<!-- chmod executable ... while japp plugin produces the correct
-                                permissions, jar/unjar operation resets 'x' flag, so the app becomes non-executable.
-                                Must fix that manually -->
+							<!-- chmod executable ... while japp plugin produces the correct permissions, 
+								jar/unjar operation resets 'x' flag, so the app becomes non-executable. Must 
+								fix that manually -->
 							<execution>
 								<id>chmod-modeler</id>
 								<phase>prepare-package</phase>

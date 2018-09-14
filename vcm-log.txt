@@ -1,0 +1,55 @@
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+net.technicpack.rest.RestfulAPIException: Error accessing URL [http://api.technicpack.net/modpack/volts-community-modpack?build=1000]
+	at net.technicpack.rest.RestObject.getRestObject(RestObject.java:157)
+	at net.technicpack.platform.http.HttpPlatformApi.getPlatformPackInfo(HttpPlatformApi.java:57)
+	at net.technicpack.platform.http.HttpPlatformApi.getPlatformPackInfoForBulk(HttpPlatformApi.java:51)
+	at net.technicpack.platform.cache.ModpackCachePlatformApi.pullAndCache(ModpackCachePlatformApi.java:132)
+	at net.technicpack.platform.cache.ModpackCachePlatformApi.getPlatformPackInfo(ModpackCachePlatformApi.java:96)
+	at net.technicpack.launcher.ui.components.modpacks.ModpackSelector$7.run(ModpackSelector.java:343)
+Caused by: net.technicpack.rest.RestfulAPIException: Error in response: This modpack is deleted or disabled.
+	at net.technicpack.rest.RestObject.getRestObject(RestObject.java:146)
+	... 5 more
+et/api/, voltz, http://mirror.technicpack.net/Technic/
+GET SOLDER PACK: http://sd.kmecpp.com/api/, volts-community-modpack, http://sd.kmecpp.com/
+GET SOLDER PACK: http://sd.kmecpp.com/api/, free-vanilla, http://sd.kmecpp.com/
+GET SOLDER PACK: http://solder.endermedia.com/api/, the-1710-pack, http://solder.endermedia.com/repository/
+GET SOLDER PACK: http://solder.typheus.me/api/, voltu0160, http://solder.typheus.me/
+ [00:51:36] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+ [00:51:36] [main/INFO] [LaunchWrapper]: Using primary tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+ [00:51:36] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLTweaker
+ [00:51:36] [main/INFO] [FML]: Forge Mod Loader version 7.99.40.1614 for Minecraft 1.7.10 loading
+ [00:51:36] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_181, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jdk1.8.0_181\jre
+ [00:51:36] [main/INFO] [FML]: [AppEng] Core Init
+ [00:51:36] [main/WARN] [FML]: The coremod codechicken.core.launch.CodeChickenCorePlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+ [00:51:36] [main/WARN] [FML]: The coremod cofh.asm.LoadingPlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+ [00:51:36] [main/WARN] [FML]: The coremod codechicken.core.launch.DepLoader does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+ [00:51:36] [main/WARN] [FML]: The coremod invtweaks.forge.asm.FMLPlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+ [00:51:36] [main/WARN] [FML]: The coremod micdoodle8.mods.miccore.MicdoodlePlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+ [00:51:36] [main/INFO] [STDOUT]: [micdoodle8.mods.miccore.DepLoader$DepLoadInst:<init>:333]: MicdoodleCore searching for dependencies in mods file: C:\Users\Kevin\AppData\Roaming\.technic\modpacks\volts-community-modpack\mods
+ [00:51:36] [main/WARN] [FML]: The coremod codechicken.nei.asm.NEICorePlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+ [00:51:36] [main/WARN] [FML]: The coremod lumien.resourceloader.asm.LoadingPlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+ [00:51:36] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+ [00:51:36] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLDeobfTweaker
+ [00:51:36] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+ [00:51:36] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+ [00:51:36] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [FML]: Found valid fingerprint for Minecraft Forge. Certificate fingerprint e3c3d50c7c986df74c645c0ac54639741c90a557
+ [00:51:37] [main/INFO] [FML]: Found valid fingerprint for Minecraft. Certificate fingerprint cd99959656f753dc28d863b46769f7f8fbaefcfc
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [STDOUT]: [micdoodle8.mods.miccore.MicdoodlePlugin:getASMTransformerClass:102]: Successfully Registered Transformer
+ [00:51:37] [main/INFO] [STDOUT]: [micdoodle8.mods.miccore.MicdoodlePlugin:injectData:295]: [Micdoodle8Core]: Patching game...
+ [00:51:37] [main/INFO] [STDOUT]: [micdoodle8.mods.miccore.MicdoodlePlugin:injectData:295]: [Micdoodle8Core]: Patching game...
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+ [00:51:37] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLDeobfTweaker

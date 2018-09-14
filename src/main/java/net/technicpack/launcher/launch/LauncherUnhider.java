@@ -7,13 +7,13 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * The Technic Launcher  is distributed in the hope that it will be useful,
+ * The Technic Launcher is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with the Technic Launcher.  If not, see <http://www.gnu.org/licenses/>.
+ * along with the Technic Launcher. If not, see <http://www.gnu.org/licenses/>.
  */
 
 package net.technicpack.launcher.launch;
@@ -27,32 +27,33 @@ import java.awt.*;
 
 public class LauncherUnhider implements ProcessExitListener {
 
-    private final TechnicSettings settings;
-    private final LauncherFrame frame;
-    private boolean hasExited = false;
+	private final TechnicSettings settings;
+	private final LauncherFrame frame;
+	private boolean hasExited = false;
 
-    public LauncherUnhider(TechnicSettings settings, LauncherFrame frame) {
-        this.settings = settings;
-        this.frame = frame;
-    }
+	public LauncherUnhider(TechnicSettings settings, LauncherFrame frame) {
+		this.settings = settings;
+		this.frame = frame;
+	}
 
-    @Override
-    public void onProcessExit() {
-        LaunchAction action = settings.getLaunchAction();
-        if (action == null || action == LaunchAction.HIDE) {
-            frame.setVisible(true);
-        }
+	@Override
+	public void onProcessExit() {
+		LaunchAction action = settings.getLaunchAction();
+		if (action == null || action == LaunchAction.HIDE) {
+			//            frame.setVisible(true);
+		}
 
-        hasExited = true;
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                frame.launchCompleted();
-            }
-        });
-    }
+		hasExited = true;
+		EventQueue.invokeLater(new Runnable() {
 
-    public boolean hasExited() {
-        return hasExited;
-    }
+			@Override
+			public void run() {
+				frame.launchCompleted();
+			}
+		});
+	}
+
+	public boolean hasExited() {
+		return hasExited;
+	}
 }
